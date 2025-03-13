@@ -1,0 +1,49 @@
+1. Dataset Description:-
+
+The dataset used for this analysis is the Planets dataset from Seaborn. The dataset includes the following columns:
+
+ method: The detection method used to find the planet (e.g., Radial Velocity, Transit, Imaging, etc.).
+ number: The number of planets detected using the method.
+ orbital period: The orbital period of the planet in days.
+ mass: The mass of the planet in Earth masses.
+ distance: The distance of the planet from Earth in light years.
+ year: The year when the planet was a discovered.
+
+ 2. Data Cleaning:-
+
+ Handling Missing Values: Upon inspecting the dataset, it was found that the columns orbital period, mass, and distance contained missing values. 
+  The missing values for orbital period were filled with the mean value of the column.
+  Similarly, the missing values for mass and distance were replaced with their respective mean values.
+ 
+Outliers Removal: Outliers were identified using the Interquartile Range (IQR) method. For each numerical column, the outliers were detected and removed, ensuring that the data is more robust for analysis.
+
+ Duplicate Entries: The dataset was checked for duplicates, but none were found, ensuring that all entries were unique.
+
+ 3. Exploratory Data Analysis (EDA):-
+
+Univariate Analysis:
+Each numerical column was analyzed to understand its distribution and characteristics:
+Central Tendency: The mean, median, and mode were computed for all numerical columns.
+ Variance and Skewness: Variance and skewness measures were used to understand the spread and asymmetry of the data.
+  The mass column also showed a skew of 2.55, indicating a concentration of data towards smaller masses.
+  The distance column had a significant skewness of 7.36, indicating a right-skewed distribution.
+
+Categorical Analysis:
+The "method" column, which is categorical, was analyzed by looking at the frequency distribution of each detection method. The results showed that the most common method was Radial Velocity with 553 occurrences, followed by Transit with 397 occurrences, and other methods like Imaging and Microlensing being far less common.
+
+Visualizations:
+Histograms: Plots were generated for each numerical column to examine the distribution of values, where appropriate. For example, the orbital period column had a wide distribution with a peak around 40 days.
+  
+Boxplots and Violin Plots: These plots were used to visualize the spread and central tendency of numerical columns with respect to categorical data (such as the method column). They highlighted how different detection methods might be associated with different ranges of orbital periods, masses, and distances.
+
+Correlation Analysis: A correlation matrix was computed to check for relationships between numerical variables. It was found that:
+ There was a very low correlation between most variables, suggesting that they are relatively independent of one another. For instance, mass and orbital period have a very weak correlation of 0.007.
+  
+Pair plot : A pair plot was generated for all numerical variables, showing the relationships between each pair of variables. This visualization reinforced the weak correlations found in the heatmap.
+
+4.Conclusion of the report:-
+
+The dataset contains information about planets discovered using various detection methods, with numerical features like orbital period, mass, and distance. The data cleaning process included handling missing values, removing outliers, and ensuring no duplicates. During exploratory data analysis, we discovered some skewed distributions, particularly in columns like orbital period, mass, and distance.
+
+The correlation analysis showed that the numerical variables were mostly independent of each other, with weak correlations. The categorical variable  showed that Radial Velocity and Transit are the most commonly used detection methods.
+
